@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <div id="posicionamento">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          <ion-item>
+            <ion-input placeholder="Nome de um produto"[(ngModel)]="texto" ></ion-input>
+            
+          </ion-item>
+          {{texto}} <!--APARECE DE FORMA DINÂMICA O QUE É ESCRITO NA CAIXA DE TEXTO-->
+        </ion-col>
+        <ion-col size="3">
+          <ion-button color="primary" size="small" (click)="adiciona()" > <!--METODO-->
+            <ion-icon name="save-outline"></ion-icon> <!--ICONE DE SALVAR-->
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col > <!--TAMANHO PADRÃO 12-->
+          <ion-item *ngFor = "let elemento_da_lista of variavel_lista" > <!--onde fica a barra do elemento,repete a estrutura de lista de cada elemento-->
+            {{elemento_da_lista}} <!--LINKAR COM A VAR DO TYPESCRIPT-->
+            <ion-button color="danger" size="small" >
+              <ion-icon name="trash-outline"></ion-icon> <!--ICONE DA LIXEIRA-->
+            </ion-button>
+          </ion-item>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+
+  </div>  
+</ion-content>
